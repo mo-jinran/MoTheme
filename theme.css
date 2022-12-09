@@ -792,3 +792,7 @@ div.m-page a:not(.js-selected):hover {
 .m-queuenotify:before {
     content: none !important;
 }
+
+.labelVip.labelVip.labelVip {
+    fill: none !important;
+}
