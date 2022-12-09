@@ -487,7 +487,7 @@ header::after {
 
 /* 评论回复背景 */
 .citm .reply {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .m-plylist_playlist,
@@ -545,12 +545,13 @@ header::after {
     right: 10px;
     bottom: 92px;
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100px;
     height: 35px;
     line-height: 35px;
     transition: background-color 0.2s ease-out;
+    z-index: 999;
 }
 
 .m-timeline .head .btn:hover {
@@ -688,4 +689,106 @@ div.m-page a:not(.js-selected):hover {
 
 .showo {
     opacity: 1;
+}
+
+/* 歌词上方 - 歌词与弹幕 */
+.jPeQUY {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 弹幕点开后的弹窗 */
+.barrage-detail {
+    background: unset;
+    background-color: var(--MoTheme-popWindow_backgroundColor) !important;
+    backdrop-filter: saturate(var(--MoTheme-popWindow_backgroundSaturate)) blur(var(--MoTheme-popWindow_backgroundBlur));
+    border-radius: var(--MoTheme-popWindowRadius) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 动态 - 回复的背景 */
+.m-comment-timeline .citm .reply {
+    background: none;
+}
+
+/* 删除歌单弹窗 */
+.m-card.m-card-arrow-right {
+    background-color: var(--MoTheme-popWindow_backgroundColor) !important;
+    backdrop-filter: saturate(var(--MoTheme-popWindow_backgroundSaturate)) blur(var(--MoTheme-popWindow_backgroundBlur));
+    border-radius: var(--MoTheme-popWindowRadius) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.m-card.m-card:before {
+    content: unset;
+}
+
+/* 动态转发按钮转发按钮位移修复 */
+.m-editor .submit {
+    bottom: unset;
+}
+
+.m-newdvdlst-date {
+    background: unset;
+}
+
+.m-newdvdlst dt .ymsk {
+    background: unset;
+}
+
+
+.discover-audioBookTitle .brtlist {
+    background-color: var(--MoTheme-other_backgroundColor);
+    backdrop-filter: saturate(var(--MoTheme-other_backgroundSaturate)) blur(var(--MoTheme-other_backgroundBlur)) !important;
+    border-radius: var(--MoTheme-otherRadius) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.m-backtotop {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    box-shadow: unset;
+}
+
+.m-backtotop:hover {
+    background-color: var(--MoTheme-other_backgroundColor);
+}
+
+.m-listhot .bg img {
+    filter: unset;
+}
+
+.m-listhot .bg .mask {
+    backdrop-filter: blur(32px);
+}
+
+.m-player .brt .brtlist,
+.m-player .brt .brtAndEnvSoundList {
+    border-radius: var(--MoTheme-otherRadius) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.m-player .brt .brtlist:before,
+.m-player .brt .brtAndEnvSoundList:before {
+    content: none;
+}
+
+.m-card.m-card-noarrow {
+    background-color: var(--MoTheme-popWindow_backgroundColor) !important;
+    backdrop-filter: saturate(var(--MoTheme-popWindow_backgroundSaturate)) blur(var(--MoTheme-popWindow_backgroundBlur));
+    border-radius: var(--MoTheme-popWindowRadius) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.m-slttypes-all .tagcntwrap,
+.m-slttypes-all .tagcnt {
+    background: unset !important;
+}
+
+.m-slttypes-all::before {
+    content: none !important;
+}
+
+.m-queuenotify:before {
+    content: none !important;
 }
