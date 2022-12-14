@@ -50,11 +50,11 @@ body {
 }
 
 /* 兼容BGEnhanced */
-.MoTheme-background_BGEnhanced #portal_root {
+.MoTheme-use_BGEnhanced #portal_root {
     opacity: 0;
 }
 
-.MoTheme-background_BGEnhanced #BGEnhanced_Background img {
+.MoTheme-use_BGEnhanced #BGEnhanced_Background img {
     filter: brightness(var(--MoTheme-background_brightness)) saturate(var(--MoTheme-background_saturate)) blur(var(--MoTheme-background_blur));
     transform: scale(var(--MoTheme-background_scale));
 }
@@ -163,17 +163,25 @@ header::after {
     margin: 10px;
     border-radius: var(--MoTheme-bottomMusicBar_radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 .m-player {
     border: unset;
     background: var(--MoTheme-bottomMusicBar_backgroundColor) !important;
-    backdrop-filter: saturate(var(--MoTheme-bottomMusicBar_backgroundSaturate)) blur(var(--MoTheme-bottomMusicBar_backgroundBlur));
+    backdrop-filter: saturate(var(--MoTheme-bottomMusicBar_backgroundSaturate)) blur(var(--MoTheme-bottomMusicBar_backgroundBlur)) !important;
     margin: 0;
 }
 
-#main-player *,
+.MoTheme-use_refinedNowPlaying .m-player.z-shadow {
+    margin: unset !important;
+    border-radius: unset !important;
+    box-shadow: unset !important;
+    border: unset !important;
+    background: unset !important;
+    backdrop-filter: unset !important;
+}
+
 .m-player * {
     transition: all 0.18s ease-out;
 }
@@ -259,7 +267,7 @@ header::after {
     background-image: linear-gradient(90deg, #43CBFF, #9708CC, #FB016D) !important;
 }
 
-.MoTheme-bottomMusicBar_refinedNowPlaying.mq-playing .prg .has {
+.MoTheme-use_refinedNowPlaying.mq-playing .prg .has {
     background-image: inherit !important;
 }
 
@@ -284,7 +292,7 @@ header::after {
     background-image: linear-gradient(0deg, #43CBFF, #FB016D) !important;
 }
 
-.MoTheme-bottomMusicBar_refinedNowPlaying.mq-playing .prg-spk .has::before {
+.MoTheme-use_refinedNowPlaying.mq-playing .prg-spk .has::before {
     background-image: inherit !important;
 }
 
@@ -311,65 +319,66 @@ header::after {
     display: none;
 }
 
+
 /* 播放页封面 */
-.cdrun {
+body:not(.MoTheme-use_refinedNowPlaying) .cdrun {
     display: none;
 }
 
-.cdbg {
+body:not(.MoTheme-use_refinedNowPlaying) .cdbg {
     display: none !important;
 }
 
-.cdwrap {
+body:not(.MoTheme-use_refinedNowPlaying) .cdwrap {
     all: unset;
 }
 
-.cdimg {
+body:not(.MoTheme-use_refinedNowPlaying) .cdimg {
     all: unset !important;
 }
 
-.cdimg img {
+body:not(.MoTheme-use_refinedNowPlaying) .cdimg img {
     border-radius: 12px;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
 }
 
-.cdbox {
+body:not(.MoTheme-use_refinedNowPlaying) .cdbox {
     display: none !important;
 }
 
 /* 评论和回到顶部按钮 */
-.g-singlec-comment,
-.g-singlec-comment-detail,
-.g-singlec-comment-top {
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment,
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-detail,
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-top {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.g-singlec-comment:hover,
-.g-singlec-comment-detail:hover,
-.g-singlec-comment-top:hover {
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment:hover,
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-detail:hover,
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-top:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.g-singlec-comment {
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment {
     right: 10px;
     bottom: 10px;
 }
 
-.g-singlec-comment-detail {
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-detail {
     left: calc(100% - 215px);
     right: 59px;
     bottom: 10px;
 }
 
-.g-singlec-comment-top {
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-top {
     right: 10px;
     bottom: 10px;
     transform: translateY(20px) !important;
 }
 
-.g-singlec-comment-top.z-show {
+body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-top.z-show {
     transform: translateY(0) !important;
 }
 
@@ -397,13 +406,13 @@ header::after {
 }
 
 .MoTheme-bottomMusicBar_dockMode .m-pinfo {
-    left: 10px !important;
-    bottom: 10px !important;
+    left: 10px;
+    bottom: 10px;
 }
 
-.m-pinfo {
-    left: 0 !important;
-    bottom: 0 !important;
+.MoTheme-use_refinedNowPlaying .m-pinfo:not(.z-show) {
+    left: 0;
+    bottom: 0;
 }
 
 .MoTheme-bottomMusicBar_dockMode .m-lyric {

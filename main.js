@@ -3,11 +3,18 @@ plugin.onAllPluginsLoaded(plugins => plugins.StylesheetLoader.loadStylesheet(
     `${this.pluginPath}/theme.css`,
     "MoTheme",
     {
-        background_BGEnhanced: {
-            name: "背景-使用BGEnhanced",
+        use_BGEnhanced: {
+            name: "使用BGEnhanced",
             type: "checkbox",
             reflect: "bodyFlag",
-            class: "MoTheme-background_BGEnhanced",
+            class: "MoTheme-use_BGEnhanced",
+            default: false
+        },
+        use_refinedNowPlaying: {
+            name: "使用RefinedNowPlaying",
+            class: "MoTheme-use_refinedNowPlaying",
+            type: "checkbox",
+            reflect: "bodyFlag",
             default: false
         },
         background_image: {
@@ -51,13 +58,6 @@ plugin.onAllPluginsLoaded(plugins => plugins.StylesheetLoader.loadStylesheet(
             type: "checkbox",
             reflect: "bodyFlag",
             default: true
-        },
-        bottomMusicBar_refinedNowPlaying: {
-            name: "底部音乐栏-使用RefinedNowPlaying",
-            class: "MoTheme-bottomMusicBar_refinedNowPlaying",
-            type: "checkbox",
-            reflect: "bodyFlag",
-            default: false
         },
         bottomMusicBar_dockMode: {
             name: "底部音乐栏-悬浮模式",
@@ -159,7 +159,9 @@ const owo = new MutationObserver(mutations => {
         if (mutation.target.classList.contains("z-show")) {
             document.querySelector(".g-singlec-comment-detail").classList.add("z-show");
         } else {
-            document.querySelector(".g-singlec-comment-detail").classList.remove("z-show");
+            if (!document.body.classList.contains("MoTheme-use_refinedNowPlaying")) {
+                document.querySelector(".g-singlec-comment-detail").classList.remove("z-show");
+            }
         }
     }
 });
@@ -175,7 +177,6 @@ const up = new MutationObserver(mutations => {
                 document.querySelector(".g-ft").classList.add("topqwq");
                 up.disconnect();
                 down.observe(document.querySelector(".g-single"), { attributes: true });
-                document.querySelector(".g-singlec-comment-detail").classList.remove("z-show");
                 owo.observe(document.querySelector(".g-singlec-comment-top"), { attributes: true });
             }
         }
@@ -190,8 +191,8 @@ const down = new MutationObserver(mutations => {
             document.querySelector(".g-sd").classList.remove("topqwq");
             document.querySelector(".g-mn").classList.remove("topqwq");
             document.querySelector(".g-ft").classList.remove("topqwq");
-            down.disconnect();
             up.observe(document.body, { childList: true });
+            down.disconnect();
             owo.disconnect();
         }
     }
