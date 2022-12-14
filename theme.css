@@ -183,7 +183,7 @@ header::after {
 }
 
 .m-player * {
-    transition: all 0.18s ease-out;
+    transition: all 0.18s ease-out !important;
 }
 
 .g-single {
