@@ -106,7 +106,7 @@ plugin.onAllPluginsLoaded(plugins => plugins.StylesheetLoader.loadStylesheet(
             key: "--MoTheme-popWindow_backgroundBlur",
             reflect: "cssVar",
             type: "cssInput",   // 并没有，随便写的
-            default: "16px"
+            default: "24px"
         },
         popWindow_backgroundSaturate: {
             name: "弹窗-背景饱和度",
@@ -134,7 +134,7 @@ plugin.onAllPluginsLoaded(plugins => plugins.StylesheetLoader.loadStylesheet(
             key: "--MoTheme-other_backgroundBlur",
             reflect: "cssVar",
             type: "cssInput",   // 并没有，随便写的
-            default: "16px"
+            default: "24px"
         },
         other_backgroundSaturate: {
             name: "其他-背景饱和度",
