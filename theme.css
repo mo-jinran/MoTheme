@@ -260,6 +260,7 @@ header::after {
 /* 音乐进度条 */
 .prg {
     /* 向上移一个像素 */
+    /* 视觉看上去更垂直居中 */
     transform: translateY(-1px);
 }
 
@@ -675,13 +676,16 @@ body:not(.MoTheme-use_refinedNowPlaying) .g-singlec-comment-top.z-show {
     bottom: 0px !important;
 }
 
-.better-ncm-manager,
 .g-sd,
 .g-mn,
 .g-ft,
 .g-single {
     display: block !important;
     transition: all 0.3s ease-out !important;
+}
+
+body.mq-playing section.better-ncm-manager.ncmm-show {
+    display: block !important;
 }
 
 .g-single {
@@ -832,12 +836,6 @@ div.m-page a:not(.js-selected):hover {
     background: unset;
 }
 
-
-.s-fc4,
-a.s-fc4.z-nohvr:hover {
-    color: unset;
-}
-
 .plugin-btn {
     padding: 10px;
 }
@@ -858,4 +856,16 @@ a.s-fc4.z-nohvr:hover {
 
 .startup-warning button:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.plugin-btn span {
+    /* 向下移一个像素 */
+    /* 视觉看上去更垂直居中 */
+    transform: translateY(1px);
+}
+
+/* 一起听8022小时30分钟 */
+/* 修复这个字看不清的问题 */
+.together-text {
+    color: unset;
 }
