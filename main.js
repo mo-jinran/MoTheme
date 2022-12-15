@@ -32,7 +32,7 @@ plugin.onAllPluginsLoaded(plugins => plugins.StylesheetLoader.loadStylesheet(
             default: "100%"
         },
         background_saturate: {
-            name: "背景--饱和度",
+            name: "背景-饱和度",
             key: "--MoTheme-background_saturate",
             reflect: "cssVar",
             type: "cssInput",   // 并没有，随便写的
