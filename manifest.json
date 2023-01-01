@@ -7,6 +7,9 @@
     "author": "沫烬染",
     "author_links": ["https://github.com/mo-jinran"],
     "type": "theme",
+    "requirements": [
+        "StylesheetLoader"
+    ],
     "injects": {
         "Main": [
             {
