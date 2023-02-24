@@ -9,7 +9,8 @@
     "type": "theme",
     "requirements": [
         "StylesheetLoader",
-        "BGEnhanced"
+        "BGEnhanced",
+        "light-dark-theme-switcher"
     ],
     "injects": {
         "Main": [
